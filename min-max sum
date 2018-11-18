@@ -1,0 +1,27 @@
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+     long long int a[5],i,t,j,min,max;
+    for(i=0;i<=4;i++)
+    scanf("%lld ",&a[i]);
+     for(j=0;j<4;j++)
+     {
+         for(i=0;i<4;i++)
+         {
+         if(a[i]>a[i+1])
+         {
+             t=a[i+1];
+             a[i+1]=a[i];
+             a[i]=t;
+         }
+         }
+     }
+     min=a[0]+a[1]+a[2]+a[3];
+     max=a[1]+a[2]+a[3]+a[4];
+     printf("%lld %lld",min,max);
+}
