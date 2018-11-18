@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+    int s,a,b,d;
+    scanf("%d\n%d",&a,&b);
+    s=sum(a,b);
+    d=diff(a,b);
+    printf("%d\n%d",s,d);
+}
+ sum(int x,int y)
+ {
+     int z;
+     z=x+y;
+     return(z);
+ }
+ diff(int f,int g)
+ {
+     int w;
+     w=g-f;
+     if(w>0)
+     return(w);
+     else 
+     return(-w);
+ }
