@@ -1,0 +1,22 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    int a,i,j,k;
+    scanf("%d",&a);
+    for(i=1;i<=a;i++)
+    {
+        for(k=a-1;k>=i;k--)
+        printf(" ");
+        for(j=1;j<=i;j++)
+        printf("#");
+        printf("\n");
+     }
+ }
