@@ -1,0 +1,25 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    int a,i,d;
+    long int b[a],c=0;
+    scanf("%d",&a);
+    scanf("\n");
+    d=a;
+    for(i=0;i<=d-1;i++)
+    {
+    scanf(" %ld",&b[i]);
+    c=c+b[i];
+    }
+    printf("%ld",c);
+    }
+
+ 
