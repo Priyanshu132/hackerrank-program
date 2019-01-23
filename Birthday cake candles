@@ -1,0 +1,33 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+  long long int *a;
+  long long int i,max,j,p,l=0;
+  scanf("%lld",&p);
+  a=malloc(p*sizeof(long long int*));
+  for(i=0;i<p;i++){
+      scanf("%lld",&a[i]);
+  }
+  j=0;max=a[j];
+  for(i=1;i<p-1-j;i++){
+      if(max<a[i])
+      {
+          max=a[i];
+      }
+  }
+  for(i=0;i<p;i++){
+      if(max==a[i]){
+        l++;
+      }
+  }
+printf("%lld",l);
+return 0;
+}
