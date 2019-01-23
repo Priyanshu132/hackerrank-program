@@ -1,0 +1,35 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    int *a,*b,*c;
+    int i,j,k=0,l=0,h=0,g=0;
+    scanf("%d",&i);
+    a=malloc(i*sizeof(int*));
+    b=malloc(i*sizeof(int*));
+    c=malloc(i*sizeof(int*));
+    for(j=0;j<i;j++){
+        scanf("%d",&a[j]);
+    }
+    for(j=1;j<i;j++){
+        if(a[j]>a[0]){
+            b[g]=a[j];k++;g++;
+        }else{
+          c[h]=a[j];l++;h++;}
+    }
+    for(j=0;j<l;j++){
+        printf("%d ",c[j]);
+    }
+    printf("%d ",a[0]);
+    for(j=0;j<k;j++)
+    printf("%d ",b[j]);
+    return 0;
+}
+
