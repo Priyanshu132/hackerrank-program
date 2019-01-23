@@ -1,0 +1,33 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int introTutorial(int *,int,int);
+int main()
+{
+    int a,b,c;
+    int *d;
+    scanf("%d\n%d",&a,&b);
+    d=malloc(b*sizeof(int*));
+    for(c=0;c<b;c++){
+        scanf("%d",&d[c]);
+    }
+    introTutorial(d,b,a);
+    return 0;
+}
+int introTutorial(int *d,int b,int a)
+{
+    int i;
+    for(i=0;i<b;i++)
+    {
+        if(a==d[i]){
+            printf("%d",i);
+        }
+    }
+    return 0;
+}
