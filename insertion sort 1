@@ -1,0 +1,36 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+  int i,j,k,p,w;
+  int *a;
+  scanf("%d",&p);
+  a=malloc(p*sizeof(int*));
+  for(i=0;i<p;i++)
+  {
+      scanf("%d",&a[i]);
+  }
+  for(i=1;i<p;i++){
+    k = a[i];
+    j = i - 1;
+    while (j >= 0 && a[j] > k) {
+      a[j + 1] = a[j];
+      for (w = 0; w < p; w++) {
+        printf("%d ", a[w]);
+      }
+      printf("\n");
+      j--;
+      }
+      a[j+1]=k;
+  }
+  for(i=0;i<p;i++)
+  printf("%d ",a[i]);
+  return 0;
+}
