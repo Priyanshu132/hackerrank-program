@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void string_sort(char** z,int b,int (*cmp_func) (char* a,char* b)) {
+   int i,j,p;
+   for(p=0;p<b;p++)
+   {
+      for(i=0;i<b-1;i++)
+      {
+        j=cmp_func(z[i],z[i+1]);
+          if(j>0)
+           {
+           char *t=z[i];
+            z[i]=z[i+1];
+            z[i+1]=t;
+           }
+       } 
+   }
+}
+int lexicographic_sort(char*a, char* b){
+    return strcmp(a,b);
+}
+int distinct_char(char* a){
+    int p=0;
+
+    while (*a != '\0') {
+        if (!strchr(a + 1, *a))                  strchr function gives different no of alphabets in that string...
+            p++;
+        a++;
+    }
+    return p;
+}
+int lexicographic_sort_reverse(char* a,char* b) {
+    return strcmp(b,a);
+}
+int sort_by_number_of_distinct_characters(char* a,char* b) {
+    int temp;
+          temp=distinct_char(a)- distinct_char(b);
+          return temp==0? lexicographic_sort(a,b):temp;
+
+}
+int sort_by_length(char* a,char* b) {
+    int i,j,temp;
+
+    j=strlen(a);
+    i=strlen(b);
+    return j-i==0? lexicographic_sort(a, b): j-i;
+}
+
+int main() 
+{
+    int n;
+    scanf("%d", &n);
+  
+    char** arr;
+	arr = (char**)malloc(n * sizeof(char*));
+  
+    for(int i = 0; i < n; i++){
+        *(arr + i) = malloc(1024 * sizeof(char));
+        scanf("%s", *(arr + i));
+        *(arr + i) = realloc(*(arr + i), strlen(*(arr + i)) + 1);
+    }
+  
+    string_sort(arr, n, lexicographic_sort);
+    for(int i = 0; i < n; i++)
+        printf("%s\n", arr[i]);
+    printf("\n");
+
+    string_sort(arr, n, lexicographic_sort_reverse);
+    for(int i = 0; i < n; i++)
+        printf("%s\n", arr[i]); 
+    printf("\n");
+
+    string_sort(arr, n, sort_by_length);
+    for(int i = 0; i < n; i++)
+        printf("%s\n", arr[i]);    
+    printf("\n");
+
+    string_sort(arr, n, sort_by_number_of_distinct_characters);
+    for(int i = 0; i < n; i++)
+        printf("%s\n", arr[i]); 
+    printf("\n");
+}
